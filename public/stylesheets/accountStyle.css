@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1C2E3B;
+    color: #ffffff;
+}
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2D4560;
+    width: 50%;
+    max-width: 600px;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    color: #F5A623;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.change-password, .logout {
+    color: #F5A623;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.details-section {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label {
+    flex: 1;
+    font-weight: bold;
+}
+
+input {
+    flex: 3;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #F5A623;
+}
+
+.interests-section, .organizations-section {
+    margin-bottom: 20px;
+}
+
+.interests, .organizations {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.interest, .organization {
+    background-color: #3B5998;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.edit-link {
+    color: #F5A623;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.save-button {
+    background-color: #F5A623;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #1C2E3B;
+    color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.close {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.error {
+    color: #f44336;
+    margin-top: 10px;
+}
+
+.success {
+    color: #4CAF50;
+    margin-top: 10px;
+}
+
+.password-requirements {
+    margin-top: 20px;
+}
+
+.password-requirements p {
+    font-weight: bold;
+}
+
+.password-requirements ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.save-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.cancel-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+}

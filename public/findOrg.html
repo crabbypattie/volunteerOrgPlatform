@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Organization Platform</title>
+    <link rel="stylesheet" href="/stylesheets/oppStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="/javascripts/opportunities.js" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <a href="/">
+                <img src="/images/logo.png" alt="Volunteer Platform Logo" id="logo">
+                <span id="site-name">Unity Volunteer</span>
+            </a>
+            <div id="nav">
+                <nav-component></nav-component>
+            </div>
+        </header>
+
+        <div class="view-buttons-container">
+            <div class="view-buttons">
+                <button type="button" v-on:click="showDashboard" class="view-button"
+                    :class="{active: isDashboardActive}">Dashboard</button>
+                <button type="button" v-on:click="showDiscover" class="view-button"
+                    :class="{active: isDiscoverActive}">Discover</button>
+            </div>
+            <input type="text" id="searchBar" class="search-bar" v-if="isDiscoverActive"
+                placeholder="Search Organization name...">
+        </div>
+
+        <div class="container">
+            <sidebar-component v-if="isDiscoverActive"
+                @update-selected-categories="updateSelectedCategories"></sidebar-component>
+            <div class="content">
+                <dashboard-component v-if="isDashboardActive"></dashboard-component>
+                <discover-component v-if="isDiscoverActive" :selected-categories="selectedCategories"
+                    ref="discover"></discover-component>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

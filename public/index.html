@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Platform</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="/">
+                <img src="images/logo.png" alt="Volunteer Platform Logo" id="logo">
+                <span id="site-name">Unity Volunteer</span>
+            </a>
+            <nav-component></nav-component>
+        </header>
+        <br>
+
+        <!-- Search Section -->
+        <section id="search-section">
+            <form>
+                <input type="text" id="keywords" name="keywords" placeholder="Search Organization Name">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section id="upcoming-events-section">
+            <h1 style="color:#f7c948">Upcoming Events</h1>
+            <div class="event-carousel">
+                <div class="event">
+                    <div class="event-details">
+                        <h2>Community Cleanup Day</h2>
+                        <p>13 June 2024, 9:31 pm – 11:31 pm</p>
+                        <p>Greenwood Park, 456 Oak Street, Anytown, USA</p>
+                        <button class="apply-button">Quick Apply</button>
+                    </div>
+                    <div class="event-image">
+                        <img src="images/sample_image.jpg" alt="Community Cleanup Day">
+                    </div>
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer id="contact-section">
+            <hr class="section-divider">
+            <h2>Contact Us at:</h2>
+            <div class="contact-icons">
+                <a href="mailto:example@gmail.com"><img src="images/gmail.png" alt="Gmail"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="/javascripts/nav-component.js"></script>
+    <script>
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1C2E3B;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#logo {
+    height: 50px;
+    text-align: left;
+
+}
+
+#site-name {
+    font-size: 24px;
+    color: #333;
+    margin-left: 20px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+header a:hover #site-name {
+    color: #007bff;
+}
+
+
+header img {
+    height: 40px;
+    margin-left: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a.active, header nav ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #1C2E3B;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    color: white;
+}
+.search-bar {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+
+.search-bar.hidden {
+    display: none;
+}
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f7c948
+}
+
+.filter-label {
+    display: block;
+    margin-bottom: 5px;
+
+}
+
+.filter-checkbox {
+    margin-right: 10px;
+}
+
+.content {
+    width: 75%;
+    padding: 20px;
+}
+
+.opportunities-info {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.opportunities-info h2 {
+    font-size: 24px;
+    color: white;
+}
+
+.opportunities-info p {
+    margin: 5px 0;
+    color: white;
+}
+
+.volunteer-listing {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s;
+    position: relative;
+}
+
+.volunteer-listing::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+}
+
+.volunteer-listing:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-title {
+    font-size: 20px;
+    margin: 0;
+    color: #007bff;
+}
+
+.volunteer-organization, .volunteer-location, .volunteer-schedule, .volunteer-description, .volunteer-date {
+    margin: 5px 0;
+    color: #555;
+}
+
+.volunteer-date {
+    font-size: 12px;
+    color: #777;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 16px;
+}
+
+/* View Buttons */
+.view-buttons {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.view-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.view-button.active {
+    background-color: #0056b3;
+}
+
+/* Hide sidebar on dashboard view */
+.sidebar.hidden {
+    display: none;
+}
+
+.details-button, .join-button, .rsvp-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.details-button:hover, .join-button:hover, .rsvp-button:hover {
+    background-color: #0056b3;
+}
+
+.event-separator {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.scrollable-list {
+    max-height: 400px;
+    overflow-y: auto;
+}

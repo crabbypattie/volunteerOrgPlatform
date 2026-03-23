@@ -1,0 +1,131 @@
+/* login-style.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/images/none.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #1C2E3B;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: #2d4560;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.social-login a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.google-login-button {
+    background-color: #4285F4;
+    color: white;
+}
+
+.facebook-login-button {
+    background-color: #3B5998;
+    color: white;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #bbb;
+}
+
+.divider span {
+    margin: 0 10px;
+    color: #bbb;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-btn {
+    width: 321px;
+    height: 40px;
+    padding: 10px;
+    background-color: #f7c948;
+    color: black;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    color: #bbb;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #f7c948;
+    text-decoration: none;
+}

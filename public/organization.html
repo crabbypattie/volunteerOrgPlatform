@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Organization</title>
+    <link rel="stylesheet" href="/stylesheets/organizationStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="/javascripts/organization.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="/">
+                <img src="/images/logo.png" alt="Volunteer Platform Logo" id="logo">
+                <span id="site-name">Unity Volunteer</span>
+            </a>
+            <div id="nav">
+                <nav-component></nav-component>
+            </div>
+        </header>
+
+        <div class="back-button" @click="goBack">
+            ← Back
+        </div>
+
+        <div v-if="organization" class="container">
+            <h1>{{ organization.name }}</h1>
+            <p>{{ organization.description }}</p>
+            <p><strong>Email:</strong> {{ organization.email }}</p>
+
+            <div v-if="events.length">
+                <h2>Events</h2>
+                <ul>
+                    <li v-for="event in events" :key="event.eventID">
+                        <h3>{{ event.eventName }}</h3>
+                        <p>{{ event.eventDescription }}</p>
+                        <p><strong>Date:</strong> {{ formatDate(event.eventDate) }}</p>
+                        <p><strong>Location:</strong> {{ event.eventLocation }}</p>
+                        <button class="rsvp-button" @click="rsvpEvent(event.eventID)">RSVP</button>
+                        <div v-if="userIsManager">
+                            <button @click="editEvent(event)">Edit</button>
+                            <button @click="deleteEvent(event.eventID)">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div v-else>
+                <p>OOPS, You don't have any events yet.</p>
+            </div>
+
+            <div v-if="userIsManager">
+                <button @click="toggleAddEventForm">Add New Event</button>
+
+                <div v-if="showAddEventForm">
+                    <h2>Add New Event</h2>
+                    <form @submit.prevent="addEvent">
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input type="text" id="eventName" v-model="newEvent.eventName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Event Description</label>
+                            <textarea id="eventDescription" v-model="newEvent.eventDescription" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Event Date</label>
+                            <input type="date" id="eventDate" v-model="newEvent.eventDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventLocation">Event Location</label>
+                            <input type="text" id="eventLocation" v-model="newEvent.eventLocation" required>
+                        </div>
+                        <button type="submit">Add Event</button>
+                        <button type="button" @click="toggleAddEventForm">Close</button>
+                    </form>
+                </div>
+
+                <div v-if="editMode">
+                    <h2>Edit Event</h2>
+                    <form @submit.prevent="updateEvent">
+                        <div class="form-group">
+                            <label for="editEventName">Event Name</label>
+                            <input type="text" id="editEventName" v-model="currentEvent.eventName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEventDescription">Event Description</label>
+                            <textarea id="editEventDescription" v-model="currentEvent.eventDescription" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEventDate">Event Date</label>
+                            <input type="date" id="editEventDate" v-model="currentEvent.eventDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEventLocation">Event Location</label>
+                            <input type="text" id="editEventLocation" v-model="currentEvent.eventLocation" required>
+                        </div>
+                        <button type="submit">Update Event</button>
+                        <button type="button" @click="cancelEdit">Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
